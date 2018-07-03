@@ -10,6 +10,16 @@ RigoDB is a simple, functional, and powerful local database solution for Python 
 
 ## Create a Database
 
+<code>
+  >>> RigoDB("new_database",{
+...     "dbname" : "sample_database",
+...     "dbpassword" : "sample_password"
+...   });
+
+'CreateDBSuccess: database: SAMPLE_DATABASE was created'
+
+  </code><br>
+
 ## Add a Table
 
 ## Add some data to a Table
