@@ -9,15 +9,15 @@ RigoDB is a simple, functional, and powerful local database solution for Python 
 
 First, you should install Rigo from pip:
 
-<code>
+<pre>
   pip2 install --upgrade rigo
-  </code>
+  </pre>
   
 Then, in your Python2 code, import Rigo:
 
-<code>
+<pre>
   from rigo import *
-  </code>
+  </pre>
   
 You are now ready to start working with databases. Let's take a quick tour of Rigo's functionality:
 
