@@ -40,6 +40,22 @@ You are now ready to start working with databases. Let's take a quick tour of Ri
 
 ## Add some data to a Table
 
+<pre>
+>>> RigoDB("new_entry",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entry":{"a":"apple"}});
+
+'WriteTableSuccess: table: SAMPLE_TABLE  was updated'
+</pre>
+<pre>
+>>> RigoDB("new_entry",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entry":{"b":"bee"}});
+
+'WriteTableSuccess: table: SAMPLE_TABLE  was updated'
+</pre>
+<pre>
+>>> RigoDB("new_entry",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entry":{"c":"cat"}});
+
+'WriteTableSuccess: table: SAMPLE_TABLE  was updated'
+</pre>
+
 ## View a Table
 
 ## Modify a Table
