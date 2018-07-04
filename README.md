@@ -80,7 +80,7 @@ You can view a whole table or a list of specific rows. To view the entire table,
 
 </pre>
 
-## Modify a Table
+## Modify a Table (edit & delete rows)
 
 To modify a table, you modify a specific row:
 
@@ -104,9 +104,37 @@ Let's check if there are changes by viewing the entire table again:
 
 The second entry has indeed changed, as intended.
 
+You can also delete a specific entry:
+
+<pre>
+>>> RigoDB("delete_entry",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":2});
+
+'EditTableSuccess: row: 2 of table: SAMPLE_TABLE was deleted'
+
+</pre>
+
+Let's check:
+
+<pre>
+>>> RigoDB("view_entries",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":"*"});
+
+[{'a': 'apple'}, {'b': 'baloon'}]
+</pre>
+
+Alright.
+
 ## Delete a Table
 
+To delete a Rigo table, use the following syntax:
 
+<pre>
+>>> RigoDB("view_entries",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":"*"});
+
+
+[{'a': 'apple'}, {'b': 'baloon'}, {'c': 'cat'}]
+
+
+</pre>
 
 ## Delete a Database
 
