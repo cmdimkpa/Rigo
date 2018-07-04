@@ -23,6 +23,8 @@ You are now ready to start working with databases. Let's take a quick tour of Ri
 
 ## Create a Database
 
+To create a database, use the following syntax:
+
 <pre>
   >>> RigoDB("new_database",{"dbname" : "sample_database","dbpassword" : "sample_password"});
 
@@ -32,6 +34,8 @@ You are now ready to start working with databases. Let's take a quick tour of Ri
 
 ## Add a Table
 
+To add a table to your database, use the following syntax:
+
 <pre>
 >>> RigoDB("add_table",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table"});
 
@@ -39,6 +43,8 @@ You are now ready to start working with databases. Let's take a quick tour of Ri
 </pre>
 
 ## Add some data to a Table
+
+To add some data to your table, use the following syntax:
 
 <pre>
 >>> RigoDB("new_entry",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entry":{"a":"apple"}});
@@ -76,7 +82,31 @@ You can view a whole table or a list of specific rows. To view the entire table,
 
 ## Modify a Table
 
+To modify a table, you modify a specific row:
+
+<pre>
+>>> RigoDB("edit_entry",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":1,"new":{"b":"baloon"}});
+
+
+'EditTableSuccess: table: SAMPLE_TABLE was updated at row: 1'
+</pre>
+
+Let's check if there are changes by viewing the entire table again:
+
+<pre>
+>>> RigoDB("view_entries",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":"*"});
+
+
+[{'a': 'apple'}, {'b': 'baloon'}, {'c': 'cat'}]
+
+
+</pre>
+
+The second entry has indeed changed, as intended.
+
 ## Delete a Table
+
+
 
 ## Delete a Database
 
