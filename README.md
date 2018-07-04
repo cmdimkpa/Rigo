@@ -58,6 +58,8 @@ You are now ready to start working with databases. Let's take a quick tour of Ri
 
 ## View a Table
 
+You can view a whole table or a list of specific rows. To view the entire table, set the `entryPos` parameter to `'*'`. To view a selection, set to a list of row numbers e.g. `[0,3,4]` for the first, fourth and fifth rows. Note: Rigo is zero-indexed. 
+
 ## Modify a Table
 
 ## Delete a Table
