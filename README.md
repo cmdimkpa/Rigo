@@ -128,15 +128,40 @@ Alright.
 To delete a Rigo table, use the following syntax:
 
 <pre>
+>>> RigoDB("delete_table",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table"});
+
+'DeleteTableSuccess: table: SAMPLE_TABLE was deleted'
+
+</pre>
+
+Let's check:
+
+<pre>
 >>> RigoDB("view_entries",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":"*"});
 
-
-[{'a': 'apple'}, {'b': 'baloon'}, {'c': 'cat'}]
-
+'TableAccessError: table not found'
 
 </pre>
 
 ## Delete a Database
+
+To delete a Rigo database, use the following syntax:
+
+<pre>
+>>> RigoDB("delete_database",{"dbname" : "sample_database","dbpassword" : "sample_password"});
+
+'DBOpSuccess: database SAMPLE_DATABASE was deleted'
+
+</pre>
+
+Let's check:
+
+<pre>
+>>> RigoDB("view_entries",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table","entryPos":"*"});
+
+'DBAccessError: could not connect to database [not found]'
+
+</pre>
 
 ## Remote Storage Options
 
