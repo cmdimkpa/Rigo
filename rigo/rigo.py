@@ -7,9 +7,10 @@ Rigo: A Lightweight Database Application for Python2
 
 import datetime,json,os,cPickle
 
+global dbs
+
 IO_Toolkit = {"serialize":{0:json.dumps,1:cPickle.dumps},"deserialize":{0:json.loads,1:cPickle.loads}}
 
-dbs = {}
 dbm = os.getcwd()+'/rigo.cache'
 
 def ReadFile(f,deserializer_id):
@@ -22,17 +23,13 @@ def UpdateFile(f,k,serializer_id):
     process = open(f,'wb+')
     process.write(IO_Toolkit["serialize"][serializer_id](k))
     process.close()
+    return "OK"
 
 def ReadDBCache():
     return ReadFile(dbm,1)
 
 def UpdateDBCache(dbs):
     UpdateFile(dbm,dbs,1)
-
-try:
-	dbs = ReadDBCache()
-except:
-	UpdateDBCache(dbs)
 
 def timestamp():
     return datetime.datetime.today()
@@ -175,6 +172,7 @@ class Rigo:
                     return "EditTableError: row number out of range (max: %d)" % self.entries[tableName]
 
 def RigoDB(command,options={}):
+    global dbs
     command = command.lower()
     if command == 'new_database':
         required = ["dbname","dbpassword"]
