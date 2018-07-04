@@ -163,6 +163,10 @@ Let's check:
 
 </pre>
 
-## Remote Storage Options
+## Remote Storage Options: Rigo Web API
+
+The Rigo Web API allows you to use Rigo over HTTP. This way, other non-Python web and mobile applications can use the same database. Coming soon.
 
 ## Rigo Performance Tests
+
+Watch this space. Coming soon.
