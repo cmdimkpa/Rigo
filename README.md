@@ -32,6 +32,12 @@ You are now ready to start working with databases. Let's take a quick tour of Ri
 
 ## Add a Table
 
+<pre>
+>>> RigoDB("add_table",{"dbname" : "sample_database","dbpassword" : "sample_password","tablename":"sample_table"});
+
+'CreateTableSuccess: table: SAMPLE_TABLE was created'
+</pre>
+
 ## Add some data to a Table
 
 ## View a Table
